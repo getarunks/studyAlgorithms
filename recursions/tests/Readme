@@ -1,0 +1,62 @@
+src: https://medium.com/@daniel.oliver.king/getting-started-with-recursion-f89f57c5b60e
+
+When I sit down to write a recursive algorithm to solve a problem, I have found it to
+be helpful to go through the following thought process in order to decide how the
+recursive call should be structured:
+
+1. Break the problem I am trying to solve down into a problem that is one step simpler
+2. Assume that my function will work to solve the simpler problem — really believe it
+   beyond any doubt
+3. Ask myself: Since I know I can solve the simpler problem, how would I solve the more
+   complex problem?
+
+Take one example of reversing a string.
+
+Let’s go through the thought process that we outlined above:
+
+First, let’s get the base case out of the way: If the string is only one character (or, for
+that matter, if it is empty), then we don’t need to do anything to reverse the string, and
+we can simply return it.
+
+I am trying to reverse a string. A problem one step simpler would be to reverse a string that
+is one letter shorter. I will assume, and believe with every fiber of my being, that my function
+can correctly reverse a string that is one letter shorter than the one I am currently trying to reverse.
+
+I ask myself: Since I know and believe that my function can correctly reverse a string that is one letter
+shorter than the one I am currently trying to reverse, how can I reverse the whole string? Well, I can
+take all of the characters except the first one, reverse those (which I know and believe that my function
+can do), and then tack the first character on to the end!
+
+One common mistake that I see people make when trying to develop a recursive algorithm
+to solve a problem is that they try to think about how to break the problem down all
+the way to the base case. I would like to emphasize that in order to develop the function above,
+I did not think about how I could break the problem down all the way to the base case. That is
+the function’s job, not yours. Instead, I only thought about the problem that is one step simpler
+than the problem I am really trying to solve, and then I wrote my recursive algorithm to build up
+from there to solve the real problem.
+
+==============================
+
+Recursive Problem-Solving
+if (problem is sufficiently simple) {
+	Directly solve the problem.
+	Return the solution.
+} else {
+	Split the problem up into one or more smaller
+	problems with the same structure as the original.
+	Solve each of those smaller problems.
+	Combine the results to get the overall solution.
+	Return the overall solution.
+}
+
+=============================
+
+Three laws of recursion,
+
+A recursive algorithm must have a base case.
+A recursive algorithm must change its state and move toward the base case.
+A recursive algorithm must call itself, recursively.
+
+=================================
+
+
